@@ -1,0 +1,19 @@
+{
+  "name": "openrecipesearch-demo",
+  "version": "0.0.0",
+  "authors": [
+    "Adam <adam@adambard.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.15",
+    "elasticsearch": "~2.1.0"
+  }
+}

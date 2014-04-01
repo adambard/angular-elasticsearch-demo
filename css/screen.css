@@ -1,0 +1,29 @@
+/* Base styles */
+
+body{
+  font-family: "Arial";
+  color: #444;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+p, li, h1, h2, h3, h4, h5, h6{
+  margin-top: 24px;
+  line-height: 24px;
+}
+
+li+li{
+  margin-top: 0px;
+}
+
+.container{
+  width: 728px;
+  margin: 0px auto;
+}
+
+/* Block styles */
+
+header, section, footer{
+  margin: 48px 0;
+}
+

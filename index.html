@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <title>
+      MyOpenRecipes: An openrecipe search
+    </title>
+    <link href="css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body class='index'>
+    <div class='container'>
+      <div ng-app='myOpenRecipes' ng-controller='recipeCtrl'>
+        <header>
+          <h1>OpenRecipe Search</h1>
+        </header>
+        <section class='searchField'>
+          <form ng-submit='search()'>
+            <input ng-model='searchTerm' type='text'>
+            <input type='submit' value='Search for recipes'>
+          </form>
+        </section>
+        <section class='results'>
+          <div class='no-recipes' ng-hide='recipes.length'>No results</div>
+          <article class='recipe' ng-cloak ng-repeat='recipe in recipes'>
+            <h2>
+              <a ng-href='{{recipe.url}}'>{{recipe.name}}</a>
+            </h2>
+            <ul>
+              <li ng-repeat='ingredient in recipe.ingredients'>{{ ingredient }}</li>
+            </ul>
+            <p>
+              {{recipe.description}}
+              <a ng-href='{{recipe.url}}'>... more at {{recipe.source}}</a>
+            </p>
+          </article>
+          <div class='load-more' ng-cloak ng-hide='allResults'>
+            <a ng-click='loadMore()'>More...</a>
+          </div>
+        </section>
+        <footer>
+          Made By
+          <a href='http://adambard.com/'>Handsome Web Developer Adam Bard,</a>
+          powered by
+          <a href='http://openrecip.es/'>OpenRecipes</a>
+        </footer>
+      </div>
+    </div>
+    <script src="bower_components/angular/angular.js" type="text/javascript"></script>
+    <script src="bower_components/elasticsearch/elasticsearch.angular.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+  </body>
+</html>
